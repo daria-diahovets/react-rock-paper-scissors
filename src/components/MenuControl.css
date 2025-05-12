@@ -1,17 +1,22 @@
 .menu {
   width: 100%;
+  padding: 0 25px;
   display: flex;
   align-items: center;
   gap: 20px;
   position: absolute;
   top: 30px;
-  padding: 0 25px;
 }
 
 .menu-btn {
   width: 100px;
   height: 65px;
-  border-radius: 65px;
+  border-radius: calc(var(--border-radius) / 1.4);
+}
+
+.menu-btn svg {
+  width: 40px;
+  height: 40px;
 }
 
 .menu-theme {
@@ -19,7 +24,7 @@
   width: 120px;
   height: 60px;
   box-shadow: -4px -4px 4px var(--color-light-shadow), 4px 4px 10px var(--color-dark-shadow), inset 10px 10px 10px rgba(0, 0, 0, .02);
-  border-radius: 92px;
+  border-radius: var(--border-radius);
   padding: 5px;
   cursor: pointer;
 }
@@ -67,4 +72,70 @@
 
 .menu-theme:has(input:checked) .menu-inner-cicle {
   left: 55%;
+}
+
+@media (max-width: 1920px) {
+  .menu {
+    gap: 1.05vw;
+    top: 1.6vw;
+    padding: 0 1.3vw;
+  }
+
+  .menu-btn {
+    width: 5.3vw;
+    height: 3.4vw;
+  }
+
+  .menu-btn svg {
+    width: 2.1vw;
+    height: 2.1vw;
+  }
+
+  .menu-theme {
+    width: 6.3vw;
+    height: 3.2vw;
+    box-shadow: -0.209vw -0.209vw 0.209vw var(--color-light-shadow), 0.209vw 0.209vw 0.55vw var(--color-dark-shadow), inset 0.55vw 0.55vw 0.55vw rgba(0, 0, 0, .02);
+    padding: 0.3vw;
+  }
+
+  .menu-inner {
+    box-shadow: inset -0.209vw -0.209vw 0.209vw var(--color-light-shadow), inset 0.209vw 0.209vw 0.55vw var(--color-dark-shadow);
+  }
+
+  .menu-inner-cicle::after {
+    background-size: 2.1vw 2.1vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    gap: 2.5vw;
+    top: 5vw;
+    padding: 0 5vw;
+  }
+
+  .menu-btn {
+    width: 17vw;
+    height: 10vw;
+  }
+
+  .menu-btn svg {
+    width: 7vw;
+    height: 5vw;
+  }
+
+  .menu-theme {
+    width: 20vw;
+    height: 10vw;
+    box-shadow: -0.209vw -0.209vw 0.209vw var(--color-light-shadow), 0.209vw 0.209vw 0.55vw var(--color-dark-shadow), inset 0.55vw 0.55vw 0.55vw rgba(0, 0, 0, .02);
+    padding: 0.8vw;
+  }
+
+  .menu-inner {
+    box-shadow: inset -0.209vw -0.209vw 0.209vw var(--color-light-shadow), inset 0.209vw 0.209vw 0.55vw var(--color-dark-shadow);
+  }
+
+  .menu-inner-cicle::after {
+    background-size: 4vw 4vw;
+  }
 }
